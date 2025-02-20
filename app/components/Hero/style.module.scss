@@ -1,0 +1,172 @@
+@import "../../style/globalVariables.scss";
+
+.heroContainer {
+  width: 100%;
+  height: 80vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  flex-direction: column;
+}
+
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $RobotoMonoRegular;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.title {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.highlight {
+  font-family: $RobotoMonoBold;
+}
+
+.talk{
+  font-family: $RobotoMonoBold;
+}
+
+.ctaContainer {
+  text-align: center;
+}
+
+.ctaText {
+  font-family: $RobotoMonoRegular;
+  font-size: 2rem;
+  color: #333;
+}
+
+.ctaButton {
+	position: relative;
+	font-family: 'Electrolize', sans-serif;
+	font-size: 1em;
+	text-transform: uppercase;
+	letter-spacing: 0.125em;
+	line-height: 1;
+	color: black;
+	margin: 0;
+  margin-top: 2rem;
+	padding: 1em;
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		color: lighten(black, 20%);
+	}
+	&:focus {
+		color: lighten(black, 10%);
+		outline: none;
+	}
+	&:active {
+		color: black;
+	}
+
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 1px;
+	}
+
+	&:before {
+		top: 0;
+		left: 0;
+		box-shadow: inset 1px 1px 0 0 black;
+	}
+	&:after {
+		right: 0;
+		bottom: 0;
+		box-shadow: inset -1px -1px 0 0 black;
+	}
+}
+
+.ctaButton:hover {
+  &:before {
+		animation: hoverShadowBefore 1s forwards;
+	}
+	&:after {
+		animation: hoverShadowAfter 1s forwards;
+	}
+}
+
+
+@keyframes hoverShadowBefore {
+  0% {
+    width: 100%;
+  height: 1px;
+  
+  top: 0;
+  left: 0;
+  }
+  33% {
+   width: 1px;
+  height: 100%;
+  
+  top: 0;
+  left: 0;
+  }
+66% {
+  width: 1px;
+  height: 1px;
+  
+  top: calc(100% - 1px);
+  left: 0;
+}
+100% {
+   width: 100%;
+  height: 1px;
+  
+  top: calc(100% - 1px); 
+  left: 0;
+  }	
+}
+
+@keyframes hoverShadowAfter {
+  0% {
+    width: 100%;
+  height: 1px;
+  }
+  33% {
+   width: 1px;
+  height: 100%;
+  
+  bottom: 0;
+  right: 0;
+  }
+66% {
+  width: 1px;
+  height: 1px;
+  
+  bottom: calc(100% - 1px);
+  right: 0;
+}
+100% {
+   width: 100%;
+  height: 1px;
+  
+  bottom: calc(100% - 1px);
+  right: 0;
+  }
+}

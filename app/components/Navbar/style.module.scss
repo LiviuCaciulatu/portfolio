@@ -1,0 +1,266 @@
+@import "../../style/globalVariables.scss";
+
+.navbarContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  transition: background-color 0.5s ease; 
+  animation: shrinkNavbar 1.5s ease-out 3s forwards;
+}
+
+.subContainer{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subTitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+}
+
+.firstName,
+.lastName {
+  font-size: 3rem;
+  color: black;
+  font-family: $RobotoMono;
+  position: relative;
+}
+
+.firstName {
+  animation: slideInFromLeft 2s ease-out forwards, bounceEffectLeft 0.5s 2.1s ease-in-out;
+}
+
+.lastName {
+  font-family: $RobotoMonoThin;
+  animation: slideInFromRight 2s ease-out forwards, bounceEffectRight 0.5s 2.1s ease-in-out;
+}
+
+.subLeft{
+  position: relative;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 2s;
+}
+
+.subMiddle{
+  font-size: 1rem;
+  font-family: $RobotoMonoThin;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 2s;
+}
+
+.subRight{
+  position: relative;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 2s;
+}
+
+.navBtns{
+  position: relative;
+	font-family: 'Electrolize', sans-serif;
+	font-size: 1em;
+	text-transform: uppercase;
+	letter-spacing: 0.125em;
+	line-height: 1;
+	color: black;
+	margin: 0;
+	padding: 1em;
+	background: none;
+	border: none;
+	cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 4.4s;
+
+	&:hover {
+		color: lighten(black, 20%);
+	}
+	&:focus {
+		color: lighten(black, 10%);
+		outline: none;
+	}
+	&:active {
+		color: black;
+	}
+
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 1px;
+	}
+
+	&:before {
+		top: 0;
+		left: 0;
+		box-shadow: inset 1px 1px 0 0 black;
+	}
+	&:after {
+		right: 0;
+		bottom: 0;
+		box-shadow: inset -1px -1px 0 0 black;
+	}
+	
+}
+
+.navBtns:hover {
+	&:before {
+		animation: hoverShadowBefore 1s forwards;
+	}
+	&:after {
+		animation: hoverShadowAfter 1s forwards;
+	}
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  50%{
+    transform: translateX(-50vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  50%{
+    transform: translateX(50vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceEffectLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes bounceEffectRight{
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+  }
+
+  @keyframes shrinkNavbar {
+    0% {
+      height: 100vh;
+    }
+    100% {
+      height: 13vh;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+  @keyframes hoverShadowBefore {
+  	0% {
+    	width: 100%;
+		height: 1px;
+		
+		top: 0;
+		left: 0;
+  	}
+  	33% {
+   	width: 1px;
+		height: 100%;
+		
+		top: 0;
+		left: 0;
+  	}
+	66% {
+		width: 1px;
+		height: 1px;
+		
+		top: calc(100% - 1px);
+		left: 0;
+	}
+	100% {
+   	width: 100%;
+		height: 1px;
+		
+		top: calc(100% - 1px); 
+		left: 0;
+  	}	
+}
+
+@keyframes hoverShadowAfter {
+  	0% {
+    	width: 100%;
+		height: 1px;
+  	}
+  	33% {
+   	width: 1px;
+		height: 100%;
+		
+		bottom: 0;
+		right: 0;
+  	}
+	66% {
+		width: 1px;
+		height: 1px;
+		
+		bottom: calc(100% - 1px);
+		right: 0;
+	}
+	100% {
+   	width: 100%;
+		height: 1px;
+		
+		bottom: calc(100% - 1px);
+		right: 0;
+  	}
+}

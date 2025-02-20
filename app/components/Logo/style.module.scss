@@ -1,0 +1,66 @@
+@import "../../style/globalVariables.scss";
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.firstName,
+.lastName {
+  font-size: 3rem;
+  color: black;
+  font-family: $RobotoMono;
+  position: relative;
+}
+
+.firstName {
+  animation: slideInFromLeft 2s ease-out forwards, bounceEffectLeft 0.5s 2.1s ease-in-out;
+}
+
+.lastName {
+  font-family: $RobotoMonoThin;
+  animation: slideInFromRight 2s ease-out forwards, bounceEffectRight 0.5s 2.1s ease-in-out;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  50%{
+    transform: translateX(-50vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  50%{
+    transform: translateX(50vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceEffectLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes bounceEffectRight{
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+  }
