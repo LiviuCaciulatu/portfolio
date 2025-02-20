@@ -1,4 +1,4 @@
-@import "../../style/globalVariables.scss";
+@use "../../style/globalVariables.scss" as gv;
 
 .container{
     background-color: black;
@@ -25,14 +25,14 @@
 }
 
 .title{
-    font-family: $RobotoMonoRegular;
+    font-family: gv.$RobotoMonoRegular;
     font-size: 3rem;
     text-align: center;
     margin-bottom: 1rem;
 }
 
 .description{
-    font-family: $RobotoMonoLight;
+    font-family: gv.$RobotoMonoLight;
     font-size: 1.2rem;
 }
 
@@ -51,7 +51,7 @@
   }
   
   .word {
-    transition: $RobotoMonoRegular 0.2s ease-in-out;
+    transition: gv.$RobotoMonoRegular 0.2s ease-in-out;
   }
   
   .word:hover {

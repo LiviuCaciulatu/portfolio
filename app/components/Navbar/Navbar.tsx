@@ -5,22 +5,38 @@ import style from "./style.module.scss";
 
 interface NavbarProps {
   aboutRef: RefObject<HTMLElement | null>;
+  projectsRef: RefObject<HTMLElement | null>;
+  footerRef: RefObject<HTMLElement | null>;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ aboutRef }) => {
+const Navbar: React.FC<NavbarProps> = ({ aboutRef, projectsRef, footerRef }) => {
   const scrollToSection = (ref: RefObject<HTMLElement | null>) => {
     if (ref?.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: ref.current.offsetTop - 80, // Adjust to navbar height if needed
+        behavior: "smooth",
+      });
     }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
     <div className={style.navbarContainer}>
       <div className={style.subContainer}>
+        <div className={style.navBtns} onClick={scrollToTop}>
+          Home
+        </div>
+
         <div className={style.navBtns} onClick={() => scrollToSection(aboutRef)}>
           About me
         </div>
-        <div className={style.navBtns}>Projects</div>
+
         <div className={style.logo}>
           <div className={style.title}>
             <span className={style.firstName}>Liviu</span>
@@ -32,8 +48,14 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef }) => {
             <span className={style.subRight}> Problem solver</span>
           </div>
         </div>
-        <div className={style.navBtns}>Skills</div>
-        <div className={style.navBtns}>Socials</div>
+
+        <div className={style.navBtns} onClick={() => scrollToSection(projectsRef)}>
+          Projects
+        </div>
+
+        <div className={style.navBtns} onClick={() => scrollToSection(footerRef)}>
+          Socials
+        </div>
       </div>
     </div>
   );

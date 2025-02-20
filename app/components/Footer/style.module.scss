@@ -1,0 +1,69 @@
+@use "../../style/globalVariables.scss" as gv;
+
+.footer{
+    width: 100%;
+    height: 40vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.footerContent{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text{
+    margin-bottom: 1rem;
+}
+
+.title{
+    font-family: gv.$RobotoMonoRegular;
+    font-size: 3rem;
+    transition: gv.$RobotoMonoBold 0.2s ease-in-out;
+}
+
+.title:hover{
+    font-weight: bold;
+}
+
+.description{
+    line-height: 1;
+    font-family: gv.$RobotoMonoLight;
+    font-size: 1.2rem;
+}
+
+.bottomText{
+    line-height: 1;
+    font-family: gv.$RobotoMonoLight;
+    font-size: 1.2rem;
+}
+
+.socials{
+    display: flex;
+    flex-direction: row;
+}
+
+.word {
+    transition: gv.$RobotoMonoRegular 0.2s ease-in-out;
+  }
+  
+  .word:hover {
+    font-weight: bold;
+  }
+
+.socialImage{
+    margin: 1rem;
+
+    &:hover{
+        transform: scale(1.3);
+    }
+  }

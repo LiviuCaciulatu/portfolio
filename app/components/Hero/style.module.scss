@@ -1,4 +1,4 @@
-@import "../../style/globalVariables.scss";
+@use "../../style/globalVariables.scss" as gv;
 
 .heroContainer {
   width: 100%;
@@ -9,6 +9,7 @@
   align-items: center;
   transition: background-color 0.3s ease;
   flex-direction: column;
+  user-select: none;
 }
 
 .heroTitle {
@@ -16,7 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: $RobotoMonoRegular;
+  font-family: gv.$RobotoMonoRegular;
   font-size: 2rem;
   text-align: center;
 }
@@ -38,11 +39,11 @@
 }
 
 .highlight {
-  font-family: $RobotoMonoBold;
+  font-family: gv.$RobotoMonoBold;
 }
 
 .talk{
-  font-family: $RobotoMonoBold;
+  font-family: gv.$RobotoMonoBold;
 }
 
 .ctaContainer {
@@ -50,7 +51,7 @@
 }
 
 .ctaText {
-  font-family: $RobotoMonoRegular;
+  font-family: gv.$RobotoMonoRegular;
   font-size: 2rem;
   color: #333;
 }

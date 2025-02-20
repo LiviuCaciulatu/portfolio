@@ -1,4 +1,4 @@
-@import "../../style/globalVariables.scss";
+@use "../../style/globalVariables.scss" as gv;
 
 .navbarContainer {
   width: 100%;
@@ -14,6 +14,7 @@
   align-items: center;
   transition: background-color 0.5s ease; 
   animation: shrinkNavbar 1.5s ease-out 3s forwards;
+  user-select: none;
 }
 
 .subContainer{
@@ -49,7 +50,7 @@
 .lastName {
   font-size: 3rem;
   color: black;
-  font-family: $RobotoMono;
+  font-family: gv.$RobotoMono;
   position: relative;
 }
 
@@ -58,7 +59,7 @@
 }
 
 .lastName {
-  font-family: $RobotoMonoThin;
+  font-family: gv.$RobotoMonoThin;
   animation: slideInFromRight 2s ease-out forwards, bounceEffectRight 0.5s 2.1s ease-in-out;
 }
 
@@ -72,7 +73,7 @@
 
 .subMiddle{
   font-size: 1rem;
-  font-family: $RobotoMonoThin;
+  font-family: gv.$RobotoMonoThin;
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 2s;
