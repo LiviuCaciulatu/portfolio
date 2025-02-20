@@ -4,23 +4,25 @@ import React, { forwardRef } from "react";
 import style from "./style.module.scss";
 import Image from "next/image";
 
-const Footer = forwardRef<HTMLElement, {}>((props, ref) => {
+const Footer = forwardRef<HTMLElement, {}>((_, ref) => {
   return (
     <footer ref={ref} className={style.footer}>
       <div className={style.footerContent}>
         <div className={style.text}>
           <div className={style.title}>Let's Get In Touch</div>
           <div className={style.description}>
-            {`I'm currently open to new job opportunities and excited to explore
-            new challenges! My inbox is always open—whether you have a question,
-            a project collaboration in mind, or just want to connect. Feel free
-            to reach out, and I'll get back to you as soon as I can.`.split(" ")
+            {`I&apos;m currently open to new job opportunities and excited to explore
+              new challenges! My inbox is always open—whether you have a question,
+              a project collaboration in mind, or just want to connect. Feel free
+              to reach out, and I&apos;ll get back to you as soon as I can.`
+              .split(" ")
               .map((word, index) => (
                 <span key={index} className={style.word}>
                   {word}{" "}
                 </span>
               ))}
           </div>
+
           <div className={style.bottomText}>Here are my socials:</div>
         </div>
         <div className={style.socials}>
@@ -39,10 +41,7 @@ const Footer = forwardRef<HTMLElement, {}>((props, ref) => {
             />
           </a>
 
-          <a
-            href="tel:+40785593851"
-            className={style.socialLink}
-          >
+          <a href="tel:+40785593851" className={style.socialLink}>
             <Image
               src={`/assets/socials/phone.svg`}
               alt="phone"
@@ -87,7 +86,6 @@ const Footer = forwardRef<HTMLElement, {}>((props, ref) => {
   );
 });
 
-// Name the component for better debugging
 Footer.displayName = "Footer";
 
 export default Footer;
