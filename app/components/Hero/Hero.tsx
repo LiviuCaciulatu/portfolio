@@ -1,11 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, RefObject } from "react";
 import style from "./style.module.scss";
 
 interface Subtitle {
   text: string;
   highlight: string;
+}
+
+interface HeroProps {
+  footerRef: RefObject<HTMLElement | null>;
 }
 
 const subtitles: Subtitle[] = [
@@ -15,7 +19,7 @@ const subtitles: Subtitle[] = [
   { text: "Need a passionate web developer? Let’s talk!", highlight: "Let’s talk!" }
 ];
 
-const Hero: React.FC = () => {
+const Hero: React.FC<HeroProps> = ({ footerRef }) => {
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const [hasStarted, setHasStarted] = useState(false);
@@ -40,7 +44,6 @@ const Hero: React.FC = () => {
           setIndex((prevIndex) => prevIndex + 1);
           setFade(true);
         } else {
-          // Last subtitle (CTA) will remain on screen and not fade
           setIsFinished(true);
           setShowCTA(true);
         }
@@ -61,6 +64,22 @@ const Hero: React.FC = () => {
     );
   };
 
+  const scrollToFooter = () => {
+    if (footerRef?.current) {
+      window.scrollTo({
+        top: footerRef.current.offsetTop - 80,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/CV-Liviu-Caciulatu.pdf";
+    link.download = "CV-Liviu-Caciulatu";
+    link.click();
+  };
+
   const currentSubtitle = subtitles[index] || { text: "", highlight: "" };
 
   return (
@@ -78,7 +97,10 @@ const Hero: React.FC = () => {
           <p className={style.ctaText}>Need a passionate web developer? <span className={style.talk}>Let’s talk!</span></p>
         </div>
       )}
-      <button className={style.ctaButton}>Get in Touch</button>
+      <div>
+        <button className={style.ctaButton} onClick={scrollToFooter}>Get in Touch</button>
+        <button className={style.ctaButton} onClick={downloadResume}>Download Resume</button>
+      </div>
     </div>
   );
 };

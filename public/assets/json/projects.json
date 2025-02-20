@@ -1,0 +1,31 @@
+[
+    {
+      "imageSrc": "/assets/png/project-1.png",
+      "altText": "Project 1",
+      "title": "CleanCode Solutions",
+      "description": "CleanCode Solutions website made using Next.js and Typescript",
+      "link": "https://cleancode.ro/"
+    },
+    {
+      "imageSrc": "/assets/png/project-2.png",
+      "altText": "Project 2",
+      "title": "Trivia Game",
+      "description": "A Trivia Game made using Next.js and Typescript",
+      "link": "https://cleancode.ro/"
+    },
+    {
+      "imageSrc": "/assets/png/project-3.png",
+      "altText": "Project 3",
+      "title": "Hangman",
+      "description": "A simple Hangman game made using React",
+      "link": "https://cleancode.ro/"
+    },
+    {
+      "imageSrc": "/assets/png/project-4.png",
+      "altText": "Project 4",
+      "title": "Good News",
+      "description": "Under construction project ",
+      "link": "https://cleancode.ro/"
+    }
+  ]
+  

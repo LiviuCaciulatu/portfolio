@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div>
       <Navbar aboutRef={aboutRef} projectsRef={projectsRef} footerRef={footerRef} />
-      <Hero />
+      <Hero footerRef={footerRef}/>
       <section ref={aboutRef}>
         <AboutMe />
       </section>

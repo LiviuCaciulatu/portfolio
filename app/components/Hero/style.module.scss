@@ -1,4 +1,5 @@
 @use "../../style/globalVariables.scss" as gv;
+@use "sass:color";
 
 .heroContainer {
   width: 100%;
@@ -64,7 +65,7 @@
 	letter-spacing: 0.125em;
 	line-height: 1;
 	color: black;
-	margin: 0;
+	margin: 2rem;
   margin-top: 2rem;
 	padding: 1em;
 	background: none;
@@ -72,10 +73,10 @@
 	cursor: pointer;
 
 	&:hover {
-		color: lighten(black, 20%);
+		color: color.scale(black, $lightness: 20%);
 	}
 	&:focus {
-		color: lighten(black, 10%);
+		color: color.scale(black, $lightness: 10%);
 		outline: none;
 	}
 	&:active {
