@@ -97,7 +97,7 @@ const Hero: React.FC<HeroProps> = ({ footerRef }) => {
           <p className={style.ctaText}>Need a passionate web developer? <span className={style.talk}>Let’s talk!</span></p>
         </div>
       )}
-      <div>
+      <div className={style.btns}>
         <button className={style.ctaButton} onClick={scrollToFooter}>Get in Touch</button>
         <button className={style.ctaButton} onClick={downloadResume}>Download Resume</button>
       </div>

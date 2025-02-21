@@ -1,0 +1,38 @@
+@use "../../style/globalVariables.scss" as gv;
+
+.navMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navBtnsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navBtns {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 2rem;
+  font-family: gv.$RobotoMonoRegular;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+
+}

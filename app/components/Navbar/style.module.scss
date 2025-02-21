@@ -11,7 +11,7 @@
   z-index: 1000;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   transition: background-color 0.5s ease;
   animation: shrinkNavbar 1.5s ease-out 3s forwards;
@@ -56,42 +56,33 @@
 }
 
 .firstName {
-  animation: slideInFromLeft 2s ease-out forwards, bounceEffectLeft 0.5s 2.1s ease-in-out;
+  animation: slideInFromLeft 2s ease-out forwards,
+    bounceEffectLeft 0.5s 2.1s ease-in-out;
 }
 
 .lastName {
   font-family: gv.$RobotoMonoThin;
-  animation: slideInFromRight 2s ease-out forwards, bounceEffectRight 0.5s 2.1s ease-in-out;
+  animation: slideInFromRight 2s ease-out forwards,
+    bounceEffectRight 0.5s 2.1s ease-in-out;
 }
 
-.subLeft {
-  position: relative;
-  font-size: 1.2rem;
-  opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
-  animation-delay: 2s;
-}
-
-.subMiddle {
-  font-size: 1.2rem;
-  font-family: gv.$RobotoMonoThin;
-  opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
-  animation-delay: 2s;
-
-}
-
+.subLeft,
+.subMiddle,
 .subRight {
-  position: relative;
   font-size: 1.2rem;
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 2s;
+}
+
+.navBtnsContainer {
+  display: flex;
+  gap: 1rem;
 }
 
 .navBtns {
   position: relative;
-  font-family: 'Electrolize', sans-serif;
+  font-family: gv.$RobotoMonoRegular;
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 0.125em;
@@ -136,6 +127,14 @@
     bottom: 0;
     box-shadow: inset -1px -1px 0 0 black;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
+    padding: 0.8em;
+    text-align: left;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
 }
 
 .navBtns:hover {
@@ -144,6 +143,68 @@
   }
   &:after {
     animation: hoverShadowAfter 1s forwards;
+  }
+}
+
+.burgerMenu {
+  display: none;
+
+  @media screen and (max-width: 1140px) {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    opacity: 0;
+    display: block;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 4.4s;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .navbarContainer {
+    display: flex;
+    justify-content: center;
+    animation: shrinkNavbarSmall 1.5s ease-out 3s forwards;
+  }
+
+  .subContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 80%;
+    padding-left: 2.5rem;
+  }
+
+  .navBtnsContainer {
+    display: none;
+  }
+
+  .firstName,
+  .lastName {
+    font-size: 2rem;
+    color: black;
+    font-family: gv.$RobotoMono;
+    position: relative;
+  }
+  .lastName {
+    font-family: gv.$RobotoMonoThin;
+  }
+
+  .subLeft,
+  .subMiddle,
+  .subRight {
+    font-size: 0.8rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 2s;
+  }
+}
+
+@media screen and (min-width: 1141px) {
+  .navBtnsContainer {
+    display: flex;
   }
 }
 
@@ -196,7 +257,16 @@
     height: 100vh;
   }
   100% {
-    height: 13vh;
+    height: 15vh;
+  }
+}
+
+@keyframes shrinkNavbarSmall {
+  0% {
+    height: 100vh;
+  }
+  100% {
+    height: 12vh;
   }
 }
 

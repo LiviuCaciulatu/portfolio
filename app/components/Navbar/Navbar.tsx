@@ -1,19 +1,29 @@
-"use client";
-
-import React, { RefObject } from "react";
+import React, { useState } from "react";
+import NavMenu from "../NavMenu/NavMenu";
 import style from "./style.module.scss";
+import Image from "next/image";
 
 interface NavbarProps {
-  aboutRef: RefObject<HTMLElement | null>;
-  projectsRef: RefObject<HTMLElement | null>;
-  footerRef: RefObject<HTMLElement | null>;
+  aboutRef: React.RefObject<HTMLElement | null>;
+  projectsRef: React.RefObject<HTMLElement | null>;
+  footerRef: React.RefObject<HTMLElement | null>;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ aboutRef, projectsRef, footerRef }) => {
-  const scrollToSection = (ref: RefObject<HTMLElement | null>) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prevState) => !prevState);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
+  const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
     if (ref?.current) {
       window.scrollTo({
-        top: ref.current.offsetTop - 80, // Adjust to navbar height if needed
+        top: ref.current.offsetTop - 80,
         behavior: "smooth",
       });
     }
@@ -29,12 +39,14 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, projectsRef, footerRef }) => 
   return (
     <div className={style.navbarContainer}>
       <div className={style.subContainer}>
-        <div className={style.navBtns} onClick={scrollToTop}>
-          Home
-        </div>
-
-        <div className={style.navBtns} onClick={() => scrollToSection(aboutRef)}>
-          About me
+      
+        <div className={style.navBtnsContainer}>
+          <button className={style.navBtns} onClick={scrollToTop}>
+            Home
+          </button>
+          <button className={style.navBtns} onClick={() => scrollToSection(aboutRef)}>
+            About Me
+          </button>
         </div>
 
         <div className={style.logo}>
@@ -49,13 +61,34 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, projectsRef, footerRef }) => 
           </div>
         </div>
 
-        <div className={style.navBtns} onClick={() => scrollToSection(projectsRef)}>
-          Projects
+        <div className={style.navBtnsContainer}>
+          <button className={style.navBtns} onClick={() => scrollToSection(projectsRef)}>
+            Projects
+          </button>
+          <button className={style.navBtns} onClick={() => scrollToSection(footerRef)}>
+            Socials
+          </button>
         </div>
 
-        <div className={style.navBtns} onClick={() => scrollToSection(footerRef)}>
-          Socials
+        <div className={style.burgerMenu} onClick={toggleMenu}>
+          <Image
+            src="/assets/svg/burger.svg"
+            alt="Menu"
+            width={30}
+            height={30}
+          />
         </div>
+
+      {isMenuOpen && (
+        <NavMenu
+          scrollToTop={scrollToTop}
+          scrollToSection={scrollToSection}
+          aboutRef={aboutRef}
+          projectsRef={projectsRef}
+          footerRef={footerRef}
+          closeMenu={closeMenu}
+        />
+      )}
       </div>
     </div>
   );
