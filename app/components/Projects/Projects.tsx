@@ -34,7 +34,7 @@ const Projects = () => {
       <div className={style.titleContainer}>
         <div className={style.title}>My Projects</div>
         <p className={style.description}>
-          These are some of the projects I've worked on, showcasing my skills
+          These are some of the projects I&apos;ve worked on, showcasing my skills
           in web development. Feel free to explore and see the code behind each
           project <span className={style.hereBtn}><a href="https://github.com/LiviuCaciulatu"
             target="_blank"
