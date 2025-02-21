@@ -3,4 +3,26 @@
 @tailwind utilities;
 
   
+  /* Apply to the whole website */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: black white;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
   

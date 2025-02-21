@@ -33,6 +33,9 @@ const NavMenu: React.FC<NavMenuProps> = ({
         <button className={style.navBtns} onClick={() => { scrollToSection(footerRef); closeMenu(); }}>
           Socials
         </button>
+        <button className={style.navBtns} onClick={() => closeMenu()}>
+          Close
+        </button>
       </div>
     </div>
   );
