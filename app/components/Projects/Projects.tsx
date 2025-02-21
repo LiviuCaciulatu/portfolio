@@ -4,14 +4,22 @@ import React, { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import Card from "../Card/Card";
 
+interface Project {
+  imageSrc: string;
+  altText: string;
+  title: string;
+  description: string;
+  link: string;
+}
+
 const Projects = () => {
-  const [projectData, setProjectData] = useState<any[]>([]);
+  const [projectData, setProjectData] = useState<Project[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch("/assets/json/projects.json");
-        const data = await response.json();
+        const data: Project[] = await response.json();
         setProjectData(data);
       } catch (error) {
         console.error("Error loading project data:", error);

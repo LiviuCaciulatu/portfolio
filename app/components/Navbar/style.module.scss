@@ -16,13 +16,6 @@
   transition: background-color 0.5s ease;
   animation: shrinkNavbar 1.5s ease-out 3s forwards;
   user-select: none;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    justify-content: flex-start;
-    height: auto;
-    padding: 20px;
-  }
 }
 
 .subContainer {
@@ -31,12 +24,6 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
 }
 
 .logo {
@@ -66,10 +53,6 @@
   color: black;
   font-family: gv.$RobotoMono;
   position: relative;
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
 }
 
 .firstName {
@@ -87,10 +70,6 @@
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 2s;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
 }
 
 .subMiddle {
@@ -100,9 +79,6 @@
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 2s;
 
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
 }
 
 .subRight {
@@ -111,10 +87,6 @@
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 2s;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
 }
 
 .navBtns {
@@ -133,11 +105,6 @@
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 4.4s;
-
-  @media (max-width: 768px) {
-    font-size: 0.9em;
-    padding: 0.8em;
-  }
 
   &:hover {
     color: color.scale(black, $lightness: 20%);
