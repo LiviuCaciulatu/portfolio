@@ -11,7 +11,7 @@
       "altText": "Project 2",
       "title": "Trivia Game",
       "description": "A Trivia Game made using Next.js and Typescript",
-      "link": "https://cleancode.ro/"
+      "link": "https://trivia-game-vert.vercel.app/"
     },
     {
       "imageSrc": "/assets/png/project-3.png",
