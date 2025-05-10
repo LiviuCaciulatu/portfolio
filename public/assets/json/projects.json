@@ -23,9 +23,9 @@
     {
       "imageSrc": "/assets/png/project-4.png",
       "altText": "Project 4",
-      "title": "Good News",
-      "description": "Under construction project ",
-      "link": "https://cleancode.ro/"
+      "title": "Programare pentru viitor",
+      "description": "Website made using Next.js and Typescript for a non-profit organization",
+      "link": "https://programare-pentru-viitor.ro/"
     }
   ]
   

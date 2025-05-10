@@ -60,12 +60,6 @@
 }
 
 .profileImage {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out;
-
-  &:hover {
-    filter: grayscale(0%);
-  }
 
   @media (max-width: 768px) {
     width: 200px !important;
