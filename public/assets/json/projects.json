@@ -16,9 +16,9 @@
     {
       "imageSrc": "/assets/png/project-3.png",
       "altText": "Project 3",
-      "title": "Hangman",
-      "description": "A simple Hangman game made using React",
-      "link": "https://hangman-tau-ruddy.vercel.app/"
+      "title": "Sales-Up",
+      "description": "A sales simulator game made using Next.js and Typescript",
+      "link": "https://sales-up.cleancode.ro/"
     },
     {
       "imageSrc": "/assets/png/project-4.png",

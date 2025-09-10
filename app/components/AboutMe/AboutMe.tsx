@@ -19,7 +19,7 @@ const AboutMe = () => {
         <div className={style.text}>
           <div className={style.title}>About Me</div>
           <div className={style.description}>
-            {`I'm an aspiring web developer with a passion for creating and problem-solving. 
+            {`I'm a web developer with a passion for creating and problem-solving. 
             For the past two years, I've been honing my skills through courses and hands-on projects, 
             and I’m currently working at CleanCode on various web development tasks. Before diving into coding, 
             I spent 11 years in the hospitality industry—first as a bartender, then as an office manager for a club and restaurant. 
